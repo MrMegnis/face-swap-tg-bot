@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  face_swap_bot:
+    build:
+      context: ./DeepFace_Img2Img
+    container_name: face_swap_bot
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./DeepFace_Img2Img:/app
+    environment:
+      - PYTHONUNBUFFERED=1
